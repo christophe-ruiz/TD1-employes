@@ -10,13 +10,17 @@ public class EmployeOrdinaire extends Employe {
 
     public EmployeOrdinaire (int numSecu, String nom, String prenom, int echelon, LocalDate dateNaissance, LocalDate dateEmbauche, double base, double nbHeures) {
         super(numSecu, nom, prenom, echelon, dateNaissance, dateEmbauche, base, nbHeures);
-        this.salaireBrut = super.getSalaireBrut() + echelon * 100;
-        this.salaireNet = 0.8 * salaireBrut;
+        this.salaireBrut = calculerBrut(base, nbHeures, echelon);
+        this.salaireNet = super.getSalaireNet();
     }
 
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    static double calculerBrut (double base, double nbHeures, int echelon) {
+        return base * nbHeures + echelon * 100;
     }
 
     public void effectuerUneTacheOrdinaire() {

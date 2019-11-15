@@ -20,6 +20,10 @@ public class Employe {
     private double salaireBrut;
     private double salaireNet;
 
+    static double calculNet (double salaireBrut) {
+        return salaireBrut * 0.8 + 100;
+    }
+
     public String getNom() {
         return nom;
     }
@@ -52,7 +56,7 @@ public class Employe {
         this.nbHeures = nbHeures;
 
         this.salaireBrut = this.base * this.nbHeures * 4;
-        this.salaireNet = this.salaireBrut * 0.8 + 100;
+        this.salaireNet = calculNet(salaireBrut);
         // Il faudrait que ces calculs soient réévalués quand modifiés.
     }
 }
