@@ -36,6 +36,10 @@ public class Employe {
         return salaireBrut;
     }
 
+    public double getBase() {
+        return base;
+    }
+
     public Employe (int numSecu, String nom, String prenom, int echelon, LocalDate dateNaissance, LocalDate dateEmbauche, double base, double nbHeures) {
         this.numEmp = ++indexEmp;
         this.numSecu = numSecu;
@@ -48,7 +52,7 @@ public class Employe {
         this.nbHeures = nbHeures;
 
         this.salaireBrut = this.base * this.nbHeures * 4;
-        this.salaireNet = this.salaireBrut * 0.8;
+        this.salaireNet = this.salaireBrut * 0.8 + 100;
         // Il faudrait que ces calculs soient réévalués quand modifiés.
     }
 }
