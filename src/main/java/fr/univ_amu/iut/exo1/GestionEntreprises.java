@@ -7,15 +7,15 @@ import java.util.ArrayList;
 public class GestionEntreprises {
     public static void main(String[] args) {
         ArrayList liste = new ArrayList();
-        Entreprise E =  new Entreprise("La Maison de Mickey", liste);
+        Entreprise maBoiteInfo =  new Entreprise("Ma Boite Info", liste);
 
         Employe bj = new Employe(12345, "Joe", "Bobby", 1, LocalDate.of(2000, Month.AUGUST, 26), LocalDate.of(2019, Month.NOVEMBER, 15), 9.50, 35);
-        E.embaucher(bj);
+        maBoiteInfo.embaucher(bj);
 
-        System.out.println(E.toString());
+        System.out.println(maBoiteInfo.toString());
 
-        E.licencier(bj);
+        maBoiteInfo.licencier(bj);
 
-        System.out.println(E.toString());
+        System.out.println(maBoiteInfo.toString());
     }
 }

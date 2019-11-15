@@ -49,5 +49,6 @@ public class Employe {
 
         this.salaireBrut = this.base * this.nbHeures * 4;
         this.salaireNet = this.salaireBrut * 0.8;
+        // Il faudrait que ces calculs soient réévalués quand modifiés.
     }
 }
